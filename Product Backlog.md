@@ -1,11 +1,5 @@
 Coursework Specification
 
-You will work on the project as a Scrum team. Details on Scrum are provided in Lecture 2, including an FAQ on how to apply Scrum in the module.
-
-You work for an organisation that requires reporting on population information. You have been tasked with designing and implementing a new system to allow easy access to this population information. The organisation has provided you with an SQL database to work from available here.
-
-The organisation has asked for the following reports to be generated:
-
 All the countries in the world organised by largest population to smallest.
 All the countries in a continent organised by largest population to smallest.
 All the countries in a region organised by largest population to smallest.
