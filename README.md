@@ -9,3 +9,10 @@ License - [![LICENSE](https://img.shields.io/github/license/graemekean/sem.svg?s
 Release - [![Releases](https://img.shields.io/github/release/graemekean/sem/all.svg?style=flat-square)](https://github.com/graemekean/sem/releases)
 
 This is the readme file for SEM module.
+
+The team consists of:
+
+Graeme Kean
+
+Gregor Nimmo
+
