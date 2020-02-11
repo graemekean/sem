@@ -11,10 +11,17 @@ public class App
 
         // Connect to database
         a.connect();
+
+        //
+
+        // OLD EMPLOYEE CODE TO BE REPLACED
         // Get Employee
-        Employee emp = a.getEmployee(255530);
+
+        // Employee emp = a.getEmployee(255530);
+
+        Country ctr = a.getCountry("CHN");
         // Display results
-        a.displayEmployee(emp);
+        a.displayCountry(ctr);
 
         // Disconnect from database
         a.disconnect();
@@ -50,7 +57,7 @@ public class App
                 // Wait a bit for db to start
                 Thread.sleep(30000);
                 // Connect to database
-                con = DriverManager.getConnection("jdbc:mysql://db:3306/employees?useSSL=false", "root", "example");
+                con = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "example");
                 System.out.println("Successfully connected");
                 break;
             }
@@ -136,6 +143,59 @@ public class App
                             + "Manager: " + emp.manager + "\n");
         }
     }
+
+    // WORLD SECTION
+
+
+    public Country getCountry(String Code)
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT name, continent, capital, population "
+                            + "FROM country "
+                            + "WHERE Code = 'CHN'";         // + ID;
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Return new country if valid.
+            // Check one is returned
+            if (rset.next())
+            {
+                Country ctr = new Country();
+                ctr.Name = rset.getString("name");
+                ctr.Continent = rset.getString("continent");
+                ctr.Capital = rset.getInt("capital");
+                ctr.Population = rset.getInt("population");
+                return ctr;
+            }
+            else
+                return null;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get country details");
+            return null;
+        }
+    }
+
+    public void displayCountry(Country ctr)
+    {
+        if (ctr != null)
+        {
+            System.out.println(
+
+                         "Country: " +  ctr.Name + "\n"
+                       + "Capital: "  + ctr.Capital + "\n"
+                       + "Continent: " + ctr.Continent + "\n"
+                       + "Population: " + ctr.Population + "\n");
+        }
+    }
+
+
 
 
 
