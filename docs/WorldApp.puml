@@ -17,6 +17,7 @@ rectangle "WORLD APPLICATION" {
     UCa ..> UCb
      UCb ..> UCc
      Database ..> UCd : return results
+     UCd ..> UCa
 
     UCc - Database : request
 }
