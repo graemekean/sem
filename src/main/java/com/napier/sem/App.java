@@ -1,20 +1,20 @@
 package com.napier.sem;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+//import java.awt.event.ActionEvent;
+//import java.awt.event.ActionListener;
 import java.sql.*;
-import java.util.Scanner;
+//import java.util.Scanner;
 import javax.swing.*;
 
 public class App
 {
 
-    private JButton button1;
-    private JPanel panelMain;
+  //  private JButton button1;
+  //  private JPanel panelMain;
 
-    public App() {
-        button1.addActionListener(e -> JOptionPane.showMessageDialog(null, "Hello there."));
-    }
+   // public App() {
+   //     button1.addActionListener(e -> JOptionPane.showMessageDialog(null, "Hello there."));
+   // }
 
     public static void main(String[] args)
     {
@@ -28,11 +28,11 @@ public class App
         System.out.println("Welcome to the SEM World Report Builder.");
 
 
-        JFrame frame = new JFrame("App");
-        frame.setContentPane(new App().panelMain);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
+//        JFrame frame = new JFrame("App");
+//        frame.setContentPane(new App().panelMain);
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        frame.pack();
+//        frame.setVisible(true);
 
 
 
