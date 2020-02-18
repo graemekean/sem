@@ -1,32 +1,56 @@
 package com.napier.sem;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.*;
+import java.util.Scanner;
+import javax.swing.*;
 
 public class App
 {
+
+    private JButton button1;
+    private JPanel panelMain;
+
+    public App() {
+        button1.addActionListener(e -> JOptionPane.showMessageDialog(null, "Hello there."));
+    }
+
     public static void main(String[] args)
     {
-        // Create new Application
+        // INSTANTIATE APPLICATION
         App a = new App();
-
         // Connect to database
         a.connect();
 
-        //
+        //Welcome loaded message for user
 
-        // OLD EMPLOYEE CODE TO BE REPLACED
-        // Get Employee
+        System.out.println("Welcome to the SEM World Report Builder.");
 
-        // Employee emp = a.getEmployee(255530);
+
+        JFrame frame = new JFrame("App");
+        frame.setContentPane(new App().panelMain);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+
+
+
+        System.out.println("Display info for China.");
 
         Country ctr = a.getCountry("CHN");
         // Display results
         a.displayCountry(ctr);
 
+
+
+
         // Disconnect from database
         a.disconnect();
+        System.exit(0);
     }
 
+    /////////////////////////////////////////// CLASSES AND METHODS  /////////////////////////////////////////
     /**
      * Connection to MySQL database.
      */
@@ -195,6 +219,54 @@ public class App
         }
     }
 
+
+
+    /////////////////////////////  ADD LOOP TO RETURN
+
+//    public ArrayList<Country> getAllCountries()
+//    {
+//        try
+//        {
+//            // Create an SQL statement
+//            Statement stmt = con.createStatement();
+//            // Create string for SQL statement
+//            String strSelect =
+//                    "SELECT ctr.Name, ctr.capital, ctr.continent, cty.Name,  "
+//                            + "FROM country ctr  , city cty "
+//                            + " "
+//                            + "ORDER BY employees.emp_no ASC";
+//            // Execute SQL statement
+//            ResultSet rset = stmt.executeQuery(strSelect);
+//            // Extract employee information
+//            ArrayList<Employee> employees = new ArrayList<Employee>();
+//            while (rset.next())
+//            {
+//                Employee emp = new Employee();
+//                emp.emp_no = rset.getInt("employees.emp_no");
+//                emp.first_name = rset.getString("employees.first_name");
+//                emp.last_name = rset.getString("employees.last_name");
+//                emp.salary = rset.getInt("salaries.salary");
+//                employees.add(emp);
+//            }
+//            return employees;
+//        }
+//        catch (Exception e)
+//        {
+//            System.out.println(e.getMessage());
+//            System.out.println("Failed to get salary details");
+//            return null;
+//        }
+//    }
+
+
+//    public void input (String) {
+//
+//            Scanner input = new Scanner(System.in);
+//
+//            System.out.print("Enter an integer: ");
+//            int number = input.nextInt();
+//            System.out.println("You entered " + number);
+//    }
 
 
 
