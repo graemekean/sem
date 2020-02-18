@@ -5,7 +5,7 @@ actor AD as "ADMIN"
 rectangle Database
 
 rectangle "WORLD APPLICATION" {
-    usecase UCa as "Get Report Type"
+    usecase UCa as "Select Report Type / Exit"
 
     usecase UCb as "Select Specific Report"
 
@@ -13,14 +13,17 @@ rectangle "WORLD APPLICATION" {
 
     usecase UCd as "print to screen"
 
-    AD - UCa
+    usecase start as "start app"
+
+    AD - start
+    start - UCa : keystroke
     UCa ..> UCb
-     UCb ..> UCc : extends
+     UCb ..> UCc : `<extends>
      Database ..> UCd : return results
      UCd ..> UCa
      UCb ..> Database :request
 
-    UCc - Database : request
+    UCc ..> Database : request
 }
 
 @enduml
