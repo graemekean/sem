@@ -15,7 +15,7 @@ MAIN SUCCESS SCENARIO
 3. The database returns a dataset based on the supplied request
 4. The application displays the returned data correctly in the expected format for the user to copy / use
 5. The user is returned to the main menu for further selection
----------------------
+----------------------
 RELATED INFORMATION (optional)
 Priority: Top priority.
 Performance Target: Data should be displayed within 5 seconds of the request being submitted
@@ -38,3 +38,6 @@ Use Case Narrative
 
 User A needs a country report. She runs the application and waits for the application to initialise.
 When the application has initialised and the main menu is shown, the user selects option 1 (Country based report).
+The user is presented with choices that relate to the country report (menu 2).
+When the specific report is selected menu 3 (parameters option) is shown if relevant to the selected report
+Once the parameters are keyed in / selected the request is sent to the server.
