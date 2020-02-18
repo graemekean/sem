@@ -1,25 +1,23 @@
 package com.napier.sem;
 
+//----------IMPORT DEPENDENCIES ---------------------------------
+
 //import java.awt.event.ActionEvent;
 //import java.awt.event.ActionListener;
 import java.sql.*;
 //import java.util.Scanner;
-import javax.swing.*;
+
+//import javax.swing.*;
 
 public class App
 {
 
-  //  private JButton button1;
-  //  private JPanel panelMain;
-
-   // public App() {
-   //     button1.addActionListener(e -> JOptionPane.showMessageDialog(null, "Hello there."));
-   // }
 
     public static void main(String[] args)
     {
         // INSTANTIATE APPLICATION
         App a = new App();
+
         // Connect to database
         a.connect();
 
@@ -28,17 +26,13 @@ public class App
         System.out.println("Welcome to the SEM World Report Builder.");
 
 
-//        JFrame frame = new JFrame("App");
-//        frame.setContentPane(new App().panelMain);
-//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        frame.pack();
-//        frame.setVisible(true);
 
-
+    // Add temporary test message and return data for China only ---------------------
 
         System.out.println("Display info for China.");
 
         Country ctr = a.getCountry("CHN");
+
         // Display results
         a.displayCountry(ctr);
 
@@ -85,6 +79,7 @@ public class App
                 System.out.println("Successfully connected");
                 break;
             }
+                //Deal with exceptions
             catch (SQLException sqle)
             {
                 System.out.println("Failed to connect to database attempt " + Integer.toString(i));
@@ -119,57 +114,10 @@ public class App
         }
     }
 
-    public Employee getEmployee(int ID)
-    {
-        try
-        {
-            // Create an SQL statement
-            Statement stmt = con.createStatement();
-            // Create string for SQL statement
-            String strSelect =
-                    "SELECT emp_no, first_name, last_name "
-                            + "FROM employees "
-                            + "WHERE emp_no = " + ID;
-            // Execute SQL statement
-            ResultSet rset = stmt.executeQuery(strSelect);
-            // Return new employee if valid.
-            // Check one is returned
-            if (rset.next())
-            {
-                Employee emp = new Employee();
-                emp.emp_no = rset.getInt("emp_no");
-                emp.first_name = rset.getString("first_name");
-                emp.last_name = rset.getString("last_name");
-                return emp;
-            }
-            else
-                return null;
-        }
-        catch (Exception e)
-        {
-            System.out.println(e.getMessage());
-            System.out.println("Failed to get employee details");
-            return null;
-        }
-    }
 
-    public void displayEmployee(Employee emp)
-    {
-        if (emp != null)
-        {
-            System.out.println(
-                    emp.emp_no + " "
-                            + emp.first_name + " "
-                            + emp.last_name + "\n"
-                            + emp.title + "\n"
-                            + "Salary:" + emp.salary + "\n"
-                            + emp.dept_name + "\n"
-                            + "Manager: " + emp.manager + "\n");
-        }
-    }
+    // WORLD SECTION ----------------------------------------------------------
 
-    // WORLD SECTION
-
+    // GWT COUNTRY DATA
 
     public Country getCountry(String Code)
     {
@@ -177,13 +125,17 @@ public class App
         {
             // Create an SQL statement
             Statement stmt = con.createStatement();
-            // Create string for SQL statement
+
+            // Create string for SQL statement - CHN HARD CODED FOR TEST PURPOSES
             String strSelect =
                     "SELECT name, continent, capital, population "
                             + "FROM country "
                             + "WHERE Code = 'CHN'";         // + ID;
+
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
+
+
             // Return new country if valid.
             // Check one is returned
             if (rset.next())
@@ -206,6 +158,8 @@ public class App
         }
     }
 
+    // DISPLAY COUNTRY DATA
+
     public void displayCountry(Country ctr)
     {
         if (ctr != null)
@@ -218,56 +172,6 @@ public class App
                        + "Population: " + ctr.Population + "\n");
         }
     }
-
-
-
-    /////////////////////////////  ADD LOOP TO RETURN
-
-//    public ArrayList<Country> getAllCountries()
-//    {
-//        try
-//        {
-//            // Create an SQL statement
-//            Statement stmt = con.createStatement();
-//            // Create string for SQL statement
-//            String strSelect =
-//                    "SELECT ctr.Name, ctr.capital, ctr.continent, cty.Name,  "
-//                            + "FROM country ctr  , city cty "
-//                            + " "
-//                            + "ORDER BY employees.emp_no ASC";
-//            // Execute SQL statement
-//            ResultSet rset = stmt.executeQuery(strSelect);
-//            // Extract employee information
-//            ArrayList<Employee> employees = new ArrayList<Employee>();
-//            while (rset.next())
-//            {
-//                Employee emp = new Employee();
-//                emp.emp_no = rset.getInt("employees.emp_no");
-//                emp.first_name = rset.getString("employees.first_name");
-//                emp.last_name = rset.getString("employees.last_name");
-//                emp.salary = rset.getInt("salaries.salary");
-//                employees.add(emp);
-//            }
-//            return employees;
-//        }
-//        catch (Exception e)
-//        {
-//            System.out.println(e.getMessage());
-//            System.out.println("Failed to get salary details");
-//            return null;
-//        }
-//    }
-
-
-//    public void input (String) {
-//
-//            Scanner input = new Scanner(System.in);
-//
-//            System.out.print("Enter an integer: ");
-//            int number = input.nextInt();
-//            System.out.println("You entered " + number);
-//    }
-
 
 
 
