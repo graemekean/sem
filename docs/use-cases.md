@@ -1,6 +1,6 @@
-Use Case:  Generate Country Detail Report -------------------------------------------------
+Use Case:  Generate Report -------------------------------------------------
 CHARACTERISTIC INFORMATION
-Goal in Context: To generate a country specific report from the world database
+Goal in Context: To generate a specific report from the world database
 Scope: World Application
 Level:  Primary task
 Preconditions: Database is running, data is populated, application is running, user input is functioning.
@@ -36,9 +36,9 @@ SCHEDULE Due Date: Version 3.0 release.
 
 Use Case Narrative
 
-User A needs a country report. She runs the application and waits for the application to initialise.
-When the application has initialised and the main menu is shown, the user selects option 1 (Country based report).
-The user is presented with choices that relate to the country report (menu 2).
+User A needs a report from the world database. She runs the application and waits for the application to initialise.
+When the application has initialised and the main menu is shown, the user selects an option.
+The user is presented with choices that relate to the selected report (menu 2).
 Once the specific report is selected, menu 3 (parameters option) is shown if relevant to the selected report.
-Once the parameters are keyed in / selected the request is sent to the server and the results printed to screen.
+Once the parameters are keyed in / selected - the request is sent to the server and the results printed to screen.
 The user is returned to the main menu.
