@@ -1,20 +1,24 @@
 @startuml
-:Main Admin: as Admin
-(Use the application) as (Use)
 
-User -> (Start)
-User --> (Use)
+actor AD as "ADMIN"
 
-Admin ---> (Use)
+rectangle Database
 
-note right of Admin : This is an example.
+rectangle "WORLD APPLICATION" {
+    usecase UCa as "Get Report Type"
 
-note right of (Use)
-A note can also
-be on several lines
-end note
+    usecase UCb as "Select Specific Report"
 
-note "This note is connected\nto several objects." as N2
-(Start) .. N2
-N2 .. (Use)
+    usecase UCc as "Input Params for report"
+
+    usecase UCd as "print to screen"
+
+    AD - UCa
+    UCa ..> UCb
+     UCb ..> UCc
+     Database ..> UCd : return results
+
+    UCc - Database : request
+}
+
 @enduml
