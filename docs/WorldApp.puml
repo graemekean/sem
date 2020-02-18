@@ -15,9 +15,10 @@ rectangle "WORLD APPLICATION" {
 
     AD - UCa
     UCa ..> UCb
-     UCb ..> UCc
+     UCb ..> UCc : extends
      Database ..> UCd : return results
      UCd ..> UCa
+     UCb ..> Database :request
 
     UCc - Database : request
 }
