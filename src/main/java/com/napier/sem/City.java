@@ -10,5 +10,4 @@ public String District;
 
 public int Population;
 
-
 }
