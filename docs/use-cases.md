@@ -6,7 +6,7 @@ Level:  Primary task
 Preconditions: Database is running, data is populated, application is running, user input is functioning.
 Success End Condition: User can copy the requested dataset from the terminal into application of choice
 Failed End Condition: Application generates an error, no data is returned, application generates incorrect dataset.
-Primary Actor: World Application
+Primary Actor: Admin User
 Trigger: Keystrokes from user input
  ---------------------------------------
 MAIN SUCCESS SCENARIO
@@ -36,7 +36,7 @@ SCHEDULE Due Date: Version 3.0 release.
 
 Use Case Narrative
 
-User A needs a report from the world database. She runs the application and waits for the application to initialise.
+User ADMIN needs a report from the world database. She runs the application and waits for the application to initialise.
 When the application has initialised and the main menu is shown, the user selects an option.
 The user is presented with choices that relate to the selected report (menu 2).
 Once the specific report is selected, menu 3 (parameters option) is shown if relevant to the selected report.

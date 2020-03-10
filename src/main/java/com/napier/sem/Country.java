@@ -5,6 +5,8 @@ package com.napier.sem;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+// add classes as private and explain each class
+
 public class Country {
 
     /**
@@ -35,7 +37,7 @@ public class Country {
     /**
      * Country Capital
      */
-    public int Capital;
+    public String Capital;
 
 
 }
