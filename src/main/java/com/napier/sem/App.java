@@ -2,7 +2,7 @@ package com.napier.sem;
 
 //----------IMPORT DEPENDENCIES ---------------------------------
 
-import com.mysql.jdbc.log.NullLogger;
+//import com.mysql.jdbc.log.NullLogger;
 
 import java.sql.*;
 
