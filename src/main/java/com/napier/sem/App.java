@@ -16,8 +16,15 @@ public class App
         // INSTANTIATE APPLICATION
         App a = new App();
 
-        // Connect application to database
-        a.connect("localhost:33060");
+        // Connect to database
+        if (args.length < 1)
+        {
+            a.connect("localhost:3306");
+        }
+        else
+        {
+            a.connect(args[0]);
+        }
 
         //Welcome loaded message for user
 
