@@ -1,39 +1,37 @@
-import com.napier.sem.App;
-import org.junit.jupiter.api.*;
+package com.napier.sem;
+
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
-
-class MyTest
+public class AppTest
 {
-    @Test
-    void unitTest()
+    static App app;
+
+    @BeforeAll
+    static void init()
     {
-        //assertEquals(5, 5;
-
-        //TESTING THE INTEGRITY OF OUR ARGUMENTS AND FEEDING THEM INCORRECT VALUES
-
-
-
-        App a = new App();
-
-        // Connect to database
-        a.connect();
-
-
-
-
-        //
-        a.CountryReport("Continent", "Asia", 10);
-
+        app = new App();
 
     }
+
+//    @Test
+//    void CountryReport()
+//    {
+//        //  app.CountryReport(null);
+//    }
 }
 
 
 
-
-
-
+//
+//
+//
+//
 //    Select code,
 //ctr.name,
 //        ctr.continent,
@@ -44,11 +42,11 @@ class MyTest
 //        LEFT OUTER JOIN city cty
 //        ON ctr.capital = cty.ID WHERE continent = Asia ORDER BY 3, 5 DESC;
 //
-
-
-
-
-
+//
+//
+//
+//
+//
 //        -- All the countries in the world organised by largest population to smallest.
 //        desc country;
 //        desc city;
