@@ -10,6 +10,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class AppTest
 {
+
+    @Test
+    void unitTest2()
+    {
+        assertEquals(5, 5);
+    }
 //    static App app;
 //
 //    @BeforeAll
