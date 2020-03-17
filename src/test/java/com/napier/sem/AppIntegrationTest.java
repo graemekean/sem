@@ -10,14 +10,22 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class AppIntegrationTest
 {
-    static App app;
 
-    @BeforeAll
-    static void init()
+    @Test
+    void unitTest2()
     {
-        app = new App();
-        app.connect("localhost:33060");
+        assertEquals(5, 5);
     }
+
+
+//    static App app;
+//
+//    @BeforeAll
+//    static void init()
+//    {
+//        app = new App();
+//        app.connect("localhost:33060");
+//    }
 
 //    @Test
 //    void testGetEmployee()
